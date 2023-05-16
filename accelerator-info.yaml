@@ -1,0 +1,22 @@
+id: 130f432c-5bb2-4e1d-8cfe-5951982a9125
+timestamp: 2023-05-16T11:21:33Z
+username: jimbasler-pivotal
+source: TAP-GUI
+accelerator:
+  name: spring-cloud-serverless
+  source:
+    image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:6f49bb69638b65c3e39cade1d8c4d2e5bf0fd90fde422107789a2e3e86ca5a50
+fragments:
+  - name: build-wrapper-maven
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: tap-workload
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=jimbasler-pivotal&repo=serverless-mon
+  deploymentType: workload
+  includeBuildToolWrapper: true
+  projectName: serverless-mon
+  sourceRepositoryPrefix: tapkadourahregistry.azurecr.io
